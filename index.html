@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Regex Password Strength</title>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Regex Password Strength" />
+        <meta name="author" content="Michael Münzenhofer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="./src/assets/favicon.ico" />
+        <link href="./src/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <h1>Regex Password Strength</h1>
+        <div class="form-container">
+            <div class="flex-row">
+                <label for="password">Password:</label>
+                <button id="toggle" onclick="togglePassword()">
+                    Show Password
+                </button>
+            </div>
+            <input
+                type="password"
+                id="password"
+                autofocus
+                autocomplete="new-password"
+                placeholder="Enter Password."
+                oninput="handleInput()"
+            />
+        </div>
+        <div class="meter">
+            <div id="very-weak"></div>
+            <div id="weak"></div>
+            <div id="medium"></div>
+            <div id="strong"></div>
+            <div id="very-strong"></div>
+        </div>
+        <div class="rules">
+            <div class="heading">
+                For a very strong password, please apply the following rules:
+            </div>
+            <ul>
+                <li>Use at least 15 characters.</li>
+                <li>Use two different lowercase letters.</li>
+                <li>Use two different uppercase letters.</li>
+                <li>Use two different number.</li>
+                <li>Use two different special characters.</li>
+            </ul>
+        </div>
+        <script src="./src/script.js"></script>
+    </body>
+</html>
