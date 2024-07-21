@@ -4,15 +4,260 @@
     background-color: #18181b;
     color: #f8fafc;
     font-family: sans-serif;
+    border: none;
+}
+
+@media only screen and (min-width: 1024px) {
+    button {
+        padding: 8px 16px;
+        font-size: 18px;
+    }
+
+    div {
+        font-size: 18px;
+    }
+
+    h1 {
+        padding-bottom: 32px;
+        font-size: 34px;
+    }
+
+    html {
+        padding: 32px 0 0 0;
+    }
+
+    input {
+        font-size: 18px;
+        padding: 8px 16px;
+    }
+
+    li {
+        font-size: 16px;
+        padding-top: 16px;
+    }
+
+    ul {
+        padding-left: 24px;
+    }
+
+    .flex-row {
+        margin-bottom: 0px;
+    }
+
+    .form-container {
+        gap: 16px;
+        padding-bottom: 16px;
+    }
+
+    .heading {
+        font-size: 18px;
+    }
+
+    .meter {
+        gap: 16px;
+    }
+
+    .meter div {
+        margin-bottom: 16px;
+        height: 24px;
+    }
+
+    .rules {
+        margin-top: 24px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    button {
+        padding: 8px 16px;
+        font-size: min(2vw, 18px);
+    }
+
+    div {
+        font-size: min(2vw, 18px);
+    }
+
+    h1 {
+        padding-bottom: min(4vw, 36px);
+        font-size: min(3.65vw, 30px);
+    }
+
+    html {
+        padding: 32px 0 0 0;
+    }
+
+    input {
+        font-size: min(2vw, 18px);
+        padding: 8px 16px;
+    }
+
+    li {
+        font-size: 16px;
+        padding-top: 16px;
+    }
+
+    ul {
+        padding-left: min(2vw, 24px);
+    }
+
+    .flex-row {
+        margin-bottom: 0px;
+    }
+
+    .form-container {
+        gap: min(2vw, 24px);
+        padding-bottom: min(2vw, 24px);
+    }
+
+    .heading {
+        font-size: 18px;
+    }
+
+    .meter {
+        gap: min(2vw, 24px);
+    }
+
+    .meter div {
+        margin-bottom: min(2vw, 24px);
+        height: min(2vw, 24px);
+    }
+
+    .rules {
+        margin-top: min(2vw, 24px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    button {
+        padding: min(1.5vw, 6px) min(4vw, 24px);
+        font-size: min(3.5vw, 16px);
+    }
+
+    div {
+        font-size: min(4vw, 18px);
+    }
+
+    h1 {
+        padding-bottom: min(4vw, 32px);
+        font-size: min(6.25vw, 28px);
+    }
+
+    html {
+        padding: min(4vw, 32px);
+    }
+
+    input {
+        font-size: min(4vw, 18px);
+        padding: min(1vw, 8px) min(2vw, 16px);
+    }
+
+    li {
+        font-size: min(3.5vw, 16px);
+        padding-top: min(2vw, 16px);
+    }
+
+    ul {
+        padding-left: min(2vw, 16px);
+    }
+
+    .flex-row {
+        margin-bottom: min(2vw, 16px);
+    }
+
+    .form-container {
+        gap: min(1vw, 8px);
+        padding-bottom: min(3vw, 24px);
+    }
+
+    .heading {
+        font-size: min(4vw, 18px);
+    }
+
+    .meter {
+        gap: min(2vw, 16px);
+    }
+
+    .meter div {
+        margin-bottom: min(4vw, 32px);
+        height: min(3vw, 24px);
+    }
+
+    .rules {
+        margin-top: min(4vw, 32px);
+    }
+}
+
+@media only screen and (max-width: 384px) {
+    button {
+        margin: auto;
+        padding: min(2vw, 4px) min(8vw, 16px);
+        font-size: min(7vw, 14px);
+    }
+
+    div {
+        font-size: min(7vw, 14px);
+    }
+
+    h1 {
+        padding-bottom: min(12vw, 24px);
+        font-size: min(12vw, 24px);
+    }
+
+    html {
+        padding: min(8vw, 16px);
+    }
+
+    input {
+        padding: 4px 8px;
+        font-size: min(7vw, 14px);
+    }
+
+    label {
+        display: none;
+    }
+
+    li {
+        padding-top: min(4vw, 8px);
+        font-size: min(7vw, 14px);
+    }
+
+    ul {
+        padding-left: 0;
+    }
+
+    .flex-row {
+        margin-bottom: min(4vw, 8px);
+    }
+
+    .form-container {
+        gap: min(4vw, 8px);
+        padding-bottom: min(8vw, 16px);
+    }
+
+    .heading {
+        font-size: min(8vw, 16px);
+    }
+
+    .meter div {
+        display: none;
+    }
+
+    .meter div:first-child {
+        display: block;
+        width: 100%;
+        margin-bottom: min(8vw, 16px);
+        height: min(8vw, 16px);
+    }
+
+    .rules {
+        margin-top: min(8vw, 16px);
+    }
 }
 
 button {
     border-radius: 8px;
-    padding: 2px 8px;
-    background-color: #a6a6ad;
+    background-color: rgb(94, 96, 96);
     color: #f8fafc;
-    border: none;
-    outline: rgb(117, 118, 118) solid 2px;
 }
 
 button:active {
@@ -21,7 +266,7 @@ button:active {
 }
 
 button:focus-visible {
-    outline: rgb(239, 247, 247) solid 4px;
+    outline: rgb(239, 247, 247) solid 2px;
 }
 
 button:hover {
@@ -29,69 +274,48 @@ button:hover {
 }
 
 h1 {
-    padding-bottom: 24px;
+    text-align: center;
 }
 
 html {
     margin: auto;
-    padding: 16px;
-    min-width: 300px;
     max-width: 512px;
 }
 
 input {
     border-radius: 8px;
-    padding: 4px;
-    border: none;
     outline: rgb(117, 118, 118) solid 2px;
 }
 
 input:focus-visible {
-    outline: rgb(239, 247, 247) solid 4px;
+    outline: rgb(239, 247, 247) solid 2px;
 }
 
 li {
-    padding-top: 8px;
-}
-
-ul {
-    padding-left: 24px;
+    list-style: none;
 }
 
 .flex-row {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 4px;
+    align-items: center;
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    padding-bottom: 16px;
-}
-
-.heading {
-    font-size: large;
 }
 
 .meter {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    gap: 15px;
 }
 
 .meter div {
     width: 100%;
-    min-height: 16px;
     background-color: #585656;
     border-radius: 4px;
-    border: none;
     outline: #101010 solid 2px;
-}
-
-.rules {
-    margin-top: 24px;
 }
