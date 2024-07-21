@@ -1,7 +1,25 @@
 const input = document.getElementById('password')
 
-input.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', (e) => {
     if (e.key === ' ') e.preventDefault()
+    else if (e.key !== 'Tab') return
+
+    const focusableElements = document.querySelectorAll('button, input')
+
+    const firstElement = focusableElements[0]
+    const lastElement = focusableElements[focusableElements.length - 1]
+
+    if (e.shiftKey) {
+        if (document.activeElement === firstElement) {
+            e.preventDefault()
+            lastElement.focus()
+        }
+    } else {
+        if (document.activeElement === lastElement) {
+            e.preventDefault()
+            firstElement.focus()
+        }
+    }
 })
 
 function togglePassword() {
