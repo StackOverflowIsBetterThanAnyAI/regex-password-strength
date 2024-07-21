@@ -9,6 +9,7 @@ function togglePassword() {
 
 function handleInput() {
     const password = document.getElementById('password').value
+    const strength = document.getElementById('strength')
 
     const veryWeak = document.getElementById('very-weak')
     const weak = document.getElementById('weak')
@@ -38,9 +39,9 @@ function handleInput() {
         medium.style.backgroundColor = '#585656'
         strong.style.backgroundColor = '#585656'
         veryStrong.style.backgroundColor = '#585656'
+        strength.style.display = 'none'
     } else {
         if (
-            charCounter < 6 ||
             !lowerCaseCounter ||
             !upperCaseCounter ||
             !numberCounter ||
@@ -51,9 +52,11 @@ function handleInput() {
             medium.style.backgroundColor = '#585656'
             strong.style.backgroundColor = '#585656'
             veryStrong.style.backgroundColor = '#585656'
+            strength.style.display = 'block'
+            strength.innerHTML = 'Password Strength: Very Weak'
         }
         if (
-            charCounter >= 6 &&
+            charCounter < 8 &&
             lowerCaseCounter &&
             upperCaseCounter &&
             numberCounter &&
@@ -64,32 +67,35 @@ function handleInput() {
             medium.style.backgroundColor = '#585656'
             strong.style.backgroundColor = '#585656'
             veryStrong.style.backgroundColor = '#585656'
+            strength.innerHTML = 'Password Strength: Weak'
         }
         if (
             charCounter >= 8 &&
-            lowerCaseCounter > 1 &&
-            upperCaseCounter > 1 &&
-            numberCounter > 1 &&
-            specialCounter > 1
+            lowerCaseCounter &&
+            upperCaseCounter &&
+            numberCounter &&
+            specialCounter
         ) {
             veryWeak.style.backgroundColor = '#f1d51f'
             weak.style.backgroundColor = '#f1d51f'
             medium.style.backgroundColor = '#f1d51f'
             strong.style.backgroundColor = '#585656'
             veryStrong.style.backgroundColor = '#585656'
+            strength.innerHTML = 'Password Strength: Medium'
         }
         if (
-            charCounter >= 10 &&
-            distinctLowerCaseCounter > 1 &&
-            distinctUpperCaseCounter > 1 &&
-            distinctNumberCounter > 1 &&
-            distinctSpecialCounter > 1
+            charCounter >= 11 &&
+            lowerCaseCounter > 1 &&
+            upperCaseCounter > 1 &&
+            numberCounter > 1 &&
+            specialCounter > 1
         ) {
             veryWeak.style.backgroundColor = '#86e610'
             weak.style.backgroundColor = '#86e610'
             medium.style.backgroundColor = '#86e610'
             strong.style.backgroundColor = '#86e610'
             veryStrong.style.backgroundColor = '#585656'
+            strength.innerHTML = 'Password Strength: Strong'
         }
         if (
             charCounter >= 15 &&
@@ -103,6 +109,7 @@ function handleInput() {
             medium.style.backgroundColor = '#06ed06'
             strong.style.backgroundColor = '#06ed06'
             veryStrong.style.backgroundColor = '#06ed06'
+            strength.innerHTML = 'Password Strength: Very Strong'
         }
     }
 }
