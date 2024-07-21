@@ -1,3 +1,9 @@
+const input = document.getElementById('password')
+
+input.addEventListener('keydown', (e) => {
+    if (e.key === ' ') e.preventDefault()
+})
+
 function togglePassword() {
     const password = document.getElementById('password')
     const toggle = document.getElementById('toggle')
@@ -11,16 +17,22 @@ function handleInput() {
     const password = document.getElementById('password').value
     const strength = document.getElementById('strength')
 
+    const checkCharacters = document.getElementById('checkCharacters')
+    const checkLowerCase = document.getElementById('checkLowerCase')
+    const checkUppercase = document.getElementById('checkUppercase')
+    const checkNumber = document.getElementById('checkNumber')
+    const checkSpecial = document.getElementById('checkSpecial')
+
     const veryWeak = document.getElementById('very-weak')
     const weak = document.getElementById('weak')
     const medium = document.getElementById('medium')
     const strong = document.getElementById('strong')
     const veryStrong = document.getElementById('very-strong')
 
-    const lowerCase = password.match(/[a-z]/g) || []
-    const upperCase = password.match(/[A-Z]/g) || []
+    const lowerCase = password.match(/[a-zäöü]/g) || []
+    const upperCase = password.match(/[A-ZÄÖÜ]/g) || []
     const number = password.match(/\d/g) || []
-    const special = password.match(/[!@#$%^&*(),.?":{}|<>]/g) || []
+    const special = password.match(/[^a-zäöü0-9 ]/gi) || []
 
     const lowerCaseCounter = lowerCase.length
     const upperCaseCounter = upperCase.length
@@ -112,4 +124,29 @@ function handleInput() {
             strength.innerHTML = 'Password Strength: Very Strong'
         }
     }
+
+    checkCharacters.innerHTML =
+        charCounter >= 15
+            ? '✔️ Use at least 15 characters.'
+            : '❌ Use at least 15 characters.'
+
+    checkLowerCase.innerHTML =
+        distinctLowerCaseCounter >= 2
+            ? '✔️ Use two different lowercase letters.'
+            : '❌ Use two different lowercase letters.'
+
+    checkUppercase.innerHTML =
+        distinctUpperCaseCounter >= 2
+            ? '✔️ Use two different uppercase letters.'
+            : '❌ Use two different uppercase letters.'
+
+    checkNumber.innerHTML =
+        distinctNumberCounter >= 2
+            ? '✔️ Use two different numbers.'
+            : '❌ Use two different numbers.'
+
+    checkSpecial.innerHTML =
+        distinctSpecialCounter >= 2
+            ? '✔️ Use two different special characters.'
+            : '❌ Use two different special characters.'
 }
